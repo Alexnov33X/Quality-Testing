@@ -16,13 +16,14 @@ package root.gcd;
  */
 public class GCD
 {
-    public int gcd(int x, int y)
+    public long gcd(int x, int y)
     {
         int t;
-
-        if (x==-2147483648)
+        if (x==Integer.MIN_VALUE && x==y)
+            return -(long)Integer.MIN_VALUE;
+        if (x==Integer.MIN_VALUE)
             x=1073741824;
-        if (y==-2147483648)
+        if (y==Integer.MIN_VALUE)
             y=1073741824;
         if(x < 0) x = -x;
         if(y < 0) y = -y;
